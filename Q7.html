@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q7</title>
+</head>
+<body>
+    <h4>Q7. Write a JavaScript function that accepts a string as a parameter and find the longest word within the string.</h4>
+
+    String: <input type = "text" id = "String"/>
+    <input type="button" id="button" onclick="long_word()"
+        value="Sumbit">
+
+    <p id="LW"></p>
+
+    <script>
+
+        function long_word(){
+            let s = document.getElementById("String").value;
+            
+            var a = s.match(/\w[a-z]{0,}/gi); // converted into array
+            var res = a[0];
+
+            for(var i = 1; i<a.length; i++){
+                if(res.length < a[i].length){
+                    res = a[i];
+                }
+            } 
+            document.getElementById("LW").innerHTML = res;
+        }
+        
+    </script>
+</body>
+</html>
